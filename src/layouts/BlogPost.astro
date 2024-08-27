@@ -21,7 +21,7 @@ const { title, description, pubDate, heroImage, tags } = Astro.props;
     <main>
       <article class="px-4">
         <div class="flex justify-between mb-6">
-          <FormattedDate date={pubDate} />
+          {pubDate && <FormattedDate date={pubDate} />}
           <p class="text-gray-500 dark:text-neutral-400 text-xs font-medium tracking-wide">
             5 min read
           </p>
@@ -94,7 +94,7 @@ blockquote {
     margin: 20px 0;
     color: #666;
     background-color: #f9f9f9;
-    @apply dark:bg-neutral-700 text-white border-l-4 border-neutral-500; 
+    @apply dark:bg-neutral-700 text-white border-l-4 border-neutral-500;
 }
 
 /* Code Blocks and Inline Code */

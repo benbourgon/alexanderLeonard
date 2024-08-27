@@ -11,7 +11,6 @@ const props = Astro.props
     border: none;
     cursor: pointer;
     outline-offset: 4px;
-    /* outline-color: deeppink; */
     transition: filter 250ms;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
@@ -22,7 +21,6 @@ const props = Astro.props
     left: 0;
     height: 100%;
     width: 100%;
-    /* background: hsl(226, 25%, 69%); */
     border-radius: 8px;
     filter: blur(2px);
     will-change: transform;
@@ -39,25 +37,18 @@ const props = Astro.props
     border-radius: 8px;
     background: linear-gradient(
       to right,
-      #473d8a 0%,
-      hsl(248, 39%, 49%) 8%,
-      hsl(248, 39%, 39%) 92%,
-      hsl(248, 39%, 29%) 100%
+      #064e3b 0%,
+      #065f46 8%,
+      #065f46 92%,
+      #047857 100%
     );
-    /* background: linear-gradient(
-      to right,
-      hsl(248, 39%, 39%) 0%,
-      hsl(248, 39%, 49%) 8%,
-      hsl(248, 39%, 39%) 92%,
-      hsl(248, 39%, 29%) 100%
-    ); */
   }
 
   .front {
     display: block;
     position: relative;
     border-radius: 8px;
-    background: hsl(248, 53%, 58%);
+    background: #064e3b;
     padding: 8px 12px;
     color: white;
     font-weight: 600;
@@ -109,7 +100,7 @@ const props = Astro.props
 
 <script >
   // document.addEventListener('astro:page-load', () => {
-    const buttons = document.querySelectorAll('.switch-theme-button'); 
+    const buttons = document.querySelectorAll('.switch-theme-button');
   buttons.forEach((button) => {
     button.addEventListener('click', () => {
       if (localStorage.theme === 'dark') {
@@ -122,5 +113,5 @@ const props = Astro.props
     })
   });
 // });
-  
+
 </script>

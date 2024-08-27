@@ -9,12 +9,11 @@ let recentPosts = posts.slice(0, numberOfPostsToDisplay);
 ---
 
 <div class="px-4 md:px-16 flex flex-col gap-4 mt-16">
-  <h3 class="font-medium text-base">Recent Publications</h3>
+  <h3 class="font-medium text-base">Work</h3>
   {
     recentPosts.map((post) => (
       <div class="flex gap-2 justify-between border-b pb-4">
         <div class="flex flex-col gap-4">
-          {/* <p>{post.data.pubDate}</p> */}
           <FormattedDate date={post.data.pubDate} />
           <a class="font-bold text-lg" href={`/blog/${post.slug}`}>
             {post.data.title}

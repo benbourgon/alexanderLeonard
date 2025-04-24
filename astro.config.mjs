@@ -1,9 +1,10 @@
 import { defineConfig, envField } from "astro/config";
 import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
 import sanity from "@sanity/astro";
 import react from "@astrojs/react";
 import { loadEnv } from "vite";
+import tailwindcss from "@tailwindcss/vite";
+import netlify from "@astrojs/netlify";
 const {
   PUBLIC_SANITY_API_VERSION,
   PUBLIC_SANITY_PROJECT_DATASET,
@@ -14,7 +15,9 @@ const {
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://example.com",
+  site: "https://alexanderleonard.netlify.app/",
+  output: "static",
+
   env: {
     schema: {
       PUBLIC_SANITY_PROJECT_ID: envField.string({
@@ -38,9 +41,9 @@ export default defineConfig({
       }),
     },
   },
+
   integrations: [
     sitemap(),
-    tailwind(),
     sanity({
       projectId: PUBLIC_SANITY_PROJECT_ID,
       dataset: PUBLIC_SANITY_PROJECT_DATASET,
@@ -50,4 +53,10 @@ export default defineConfig({
     }),
     react(),
   ],
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
+
+  adapter: netlify(),
 });
